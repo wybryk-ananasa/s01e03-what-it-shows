@@ -20,7 +20,7 @@ signature: OpenCode / Marcin Wojteczko
 
 The parser reads month first even for day-first tenants. The booking-v3 form, separately, shows a month-first hint while interpreting the entry in the tenant's format. Intake tags are guesses, not a reliable way to split these reports.
 
-Five reports flagged in the desk notes describe a one-day move. They were assigned to the parser group by tenant, but their symptoms warrant a separate investigation. Their root cause is not established. They are excluded from the parser count above so no report is counted twice.
+The desk notes identify reports read as one-day moves. The export files them under the parser cause by tenant; they remain included in that count, rather than being counted as a separate problem.
 
 ## What to do next
 

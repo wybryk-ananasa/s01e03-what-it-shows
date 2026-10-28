@@ -24,12 +24,12 @@
     <h2>Problems and tickets</h2>
     <p>412 unique reports merged into #4471 in the export.</p>
     <table><thead><tr><th>Problem</th><th>Reports</th><th>Ticket</th></tr></thead><tbody>
-      <tr><td>Day-first dates parsed month-first</td><td>374</td><td><a href="https://github.com/wybryk-ananasa/s01e03-what-it-shows/issues/3">#3</a></td></tr>
+      <tr><td>Day-first dates parsed month-first</td><td>379</td><td><a href="https://github.com/wybryk-ananasa/s01e03-what-it-shows/issues/3">#3</a></td></tr>
       <tr><td>Booking-v3 hint disagrees with the tenant's date format</td><td>33</td><td><a href="https://github.com/wybryk-ananasa/s01e03-what-it-shows/issues/1">#1</a></td></tr>
-      <tr><td>Invites move by one day</td><td>5</td><td><a href="https://github.com/wybryk-ananasa/s01e03-what-it-shows/issues/2">#2</a></td></tr>
     </tbody></table>
+    <p>5 reports read as a one-day move; they are included in the parser count by the export's cause classification.</p>
     <p>The parser reads month first even for day-first tenants. The booking-v3 form, separately, shows a month-first hint while interpreting the entry in the tenant's format. Intake tags are guesses, not a reliable way to split these reports.</p>
-    <p>Five reports flagged in the desk notes describe a one-day move. They were assigned to the parser group by tenant, but their symptoms warrant a separate investigation. Their root cause is not established. They are excluded from the parser count above so no report is counted twice.</p>
+    <p>The desk notes identify reports read as one-day moves. The export files them under the parser cause by tenant; they remain included in that count, rather than being counted as a separate problem.</p>
     <h2>What to do next</h2>
     <p>Check the live desk before relying on this snapshot: reports may have arrived or been refiled since the export. Compare symptoms and tenant details, not just matching subjects. The older <a href="/kb/triage/dedupe">triage rule</a> and <a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a> describe subject-based merging; do not silently rewrite the accepted decision.</p>
     <p>Sources: the <a href="/kb/incidents/4471">original incident</a>, <code>reports-4471.json</code>, <code>desk-notes.json</code>, tenant records, and <code>causes.ts</code> in this export.</p>
