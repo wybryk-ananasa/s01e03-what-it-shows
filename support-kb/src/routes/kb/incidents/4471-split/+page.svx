@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 · separate date problems'
 owner: support desk
-status: investigation
+status: resolved
 reviewed: 2026-10-28
 signature: OpenCode / Marcin Wojteczko
 ---
@@ -23,6 +23,8 @@ The parser reads month first even for day-first tenants. The booking-v3 form, se
 The desk notes identify reports read as one-day moves. The export files them under the parser cause by tenant; they remain included in that count, rather than being counted as a separate problem.
 
 ## What to do next
+
+Engineering closed #4471 on 5 October: the parser was fixed in `fix(dates): parse dd/mm for eu locales`, and the hint will not be fixed because the booking-v3 form was retired.
 
 Check the live desk before relying on this snapshot: reports may have arrived or been refiled since the export. Compare symptoms and tenant details, not just matching subjects. The older [triage rule](/kb/triage/dedupe) and [decision 0001](/kb/decisions/0001-dedupe-by-subject) describe subject-based merging; do not silently rewrite the accepted decision.
 

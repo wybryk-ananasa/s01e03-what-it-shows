@@ -17,7 +17,7 @@
 <body><div class="kb">
   <header><a class="crumb" href="/kb">support desk · kb</a>
     <h1>#4471 · separate date problems</h1>
-    <p class="meta">owner <b>support desk</b> · investigation · reviewed 2026-10-28</p>
+    <p class="meta">owner <b>support desk</b> · resolved · reviewed 2026-10-28</p>
   </header>
   <main>
     <p>#4471 combined reports that do not all describe the same problem. The counts below are based on the export through 4 October, not a live queue. They count each report ID once.</p>
@@ -31,6 +31,7 @@
     <p>The parser reads month first even for day-first tenants. The booking-v3 form, separately, shows a month-first hint while interpreting the entry in the tenant's format. Intake tags are guesses, not a reliable way to split these reports.</p>
     <p>The desk notes identify reports read as one-day moves. The export files them under the parser cause by tenant; they remain included in that count, rather than being counted as a separate problem.</p>
     <h2>What to do next</h2>
+    <p>Engineering closed #4471 on 5 October: the parser was fixed in <code>fix(dates): parse dd/mm for eu locales</code>, and the hint will not be fixed because the booking-v3 form was retired.</p>
     <p>Check the live desk before relying on this snapshot: reports may have arrived or been refiled since the export. Compare symptoms and tenant details, not just matching subjects. The older <a href="/kb/triage/dedupe">triage rule</a> and <a href="/kb/decisions/0001-dedupe-by-subject">decision 0001</a> describe subject-based merging; do not silently rewrite the accepted decision.</p>
     <p>Sources: the <a href="/kb/incidents/4471">original incident</a>, <code>reports-4471.json</code>, <code>desk-notes.json</code>, tenant records, and <code>causes.ts</code> in this export.</p>
     <p class="stamp">desk ref <b>DR-P8S5-QXA1</b></p>
