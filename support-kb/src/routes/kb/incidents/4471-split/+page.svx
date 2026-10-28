@@ -1,0 +1,31 @@
+---
+layout: runbook
+title: '#4471 · separate date problems'
+owner: support desk
+status: investigation
+reviewed: 2026-10-28
+signature: OpenCode / Marcin Wojteczko
+---
+
+<script>
+  import ReportSplit from '#lib/kb/ReportSplit.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+#4471 combined reports that do not all describe the same problem. The counts below are based on the export through 4 October, not a live queue. They count each report ID once.
+
+## Problems and tickets
+
+<ReportSplit />
+
+The parser reads month first even for day-first tenants. The booking-v3 form, separately, shows a month-first hint while interpreting the entry in the tenant's format. Intake tags are guesses, not a reliable way to split these reports.
+
+Five reports flagged in the desk notes describe a one-day move. They were assigned to the parser group by tenant, but their symptoms warrant a separate investigation. Their root cause is not established. They are excluded from the parser count above so no report is counted twice.
+
+## What to do next
+
+Check the live desk before relying on this snapshot: reports may have arrived or been refiled since the export. Compare symptoms and tenant details, not just matching subjects. The older [triage rule](/kb/triage/dedupe) and [decision 0001](/kb/decisions/0001-dedupe-by-subject) describe subject-based merging; do not silently rewrite the accepted decision.
+
+Sources: the [original incident](/kb/incidents/4471), `reports-4471.json`, `desk-notes.json`, tenant records, and `causes.ts` in this export.
+
+<RenderStamp {signature} />
